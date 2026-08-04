@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#050711">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+
+  <title>Videos Virales HN | Canales oficiales de Telegram</title>
+  <meta name="description" content="Accede a los canales oficiales de Videos Virales HN en Telegram. Contenido nuevo, selección viral y acceso gratuito para mayores de 18 años.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_HN">
+  <meta property="og:site_name" content="Videos Virales HN">
+  <meta property="og:title" content="Videos Virales HN | Telegram oficial">
+  <meta property="og:description" content="Los videos más virales en un solo lugar. Elige un canal y únete gratis en Telegram.">
+  <meta property="og:image" content="assets/portada-videos-virales-hn.png">
+  <meta property="og:image:alt" content="Portada de Videos Virales HN">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Videos Virales HN | Telegram oficial">
+  <meta name="twitter:description" content="Selecciona uno de nuestros canales oficiales y únete gratis.">
+  <meta name="twitter:image" content="assets/portada-videos-virales-hn.png">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/logo-videos-virales-hn.png" as="image">
+  <link rel="preload" href="assets/portada-videos-virales-hn.png" as="image">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <canvas id="cyber-canvas" aria-hidden="true"></canvas>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="scanline" aria-hidden="true"></div>
+
+  <noscript>
+    <div class="noscript-message">Activa JavaScript para confirmar que eres mayor de 18 años y abrir los canales.</div>
+  </noscript>
+
+  <div class="age-gate" id="age-gate" role="dialog" aria-modal="true" aria-labelledby="age-title" aria-describedby="age-description">
+    <div class="age-gate__backdrop"></div>
+    <section class="age-card">
+      <div class="age-card__icon" aria-hidden="true">18+</div>
+      <p class="eyebrow">ACCESO RESTRINGIDO</p>
+      <h1 id="age-title">Contenido para mayores de edad</h1>
+      <p id="age-description">
+        Este sitio dirige a canales externos de Telegram que pueden contener material no apto para menores.
+        Confirma que tienes <strong>18 años o más</strong> para continuar.
+      </p>
+      <div class="age-card__actions">
+        <button class="button button--primary" id="confirm-age" type="button">
+          <span>Sí, tengo 18 años o más</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+        <button class="button button--ghost" id="leave-site" type="button">Salir del sitio</button>
+      </div>
+      <p class="age-card__privacy">La confirmación se guarda únicamente en tu navegador. No recopilamos datos personales.</p>
+    </section>
+  </div>
+
+  <header class="topbar" aria-label="Encabezado principal">
+    <a class="brand-mini" href="#inicio" aria-label="Ir al inicio">
+      <img src="assets/favicon.svg" alt="" width="36" height="36">
+      <span>VIDEOS VIRALES <b>HN</b></span>
+    </a>
+    <div class="status-pill" aria-label="Sitio oficial">
+      <span class="status-dot"></span>
+      SITIO OFICIAL
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__visual" aria-hidden="true">
+        <div class="hero__banner"></div>
+        <div class="hero__grid"></div>
+      </div>
+
+      <div class="hero__content container">
+        <div class="logo-shell reveal">
+          <span class="logo-shell__orbit"></span>
+          <img src="assets/logo-videos-virales-hn.png" alt="Logo de Videos Virales HN" width="453" height="374">
+          <span class="verified-badge" title="Canales oficiales" aria-label="Canales oficiales verificados">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9.2 16.2-3.4-3.4 1.4-1.4 2 2 7-7 1.4 1.4-8.4 8.4Z"/></svg>
+          </span>
+        </div>
+
+        <p class="eyebrow reveal">DESDE X DIRECTO A TELEGRAM</p>
+        <h1 id="hero-title" class="reveal">Videos que están rompiendo internet.</h1>
+        <p class="hero__lead reveal">
+          La mejor selección de contenido viral en un solo lugar. Elige uno de nuestros canales oficiales y únete gratis desde Telegram.
+        </p>
+
+        <div class="hero__trust reveal" aria-label="Características del sitio">
+          <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5c0 4.6 2.9 8 7 10 4.1-2 7-5.4 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg>Acceso seguro</span>
+          <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 10 17 19 7"/></svg>Enlaces oficiales</span>
+          <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M2 12h20"/></svg>Contenido diario</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="channels section" id="canales" aria-labelledby="channels-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">ACCESO OFICIAL</p>
+          <h2 id="channels-title">Elige tu canal</h2>
+          <p>Selecciona uno de nuestros canales oficiales. Al entrar también podrás enviarnos mensajes directos desde Telegram.</p>
+        </div>
+
+        <div class="security-panel reveal" aria-label="Información de seguridad">
+          <div class="security-panel__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.6 2.9 8 7 10 4.1-2 7-5.4 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <div>
+            <h3>Conexión directa y transparente</h3>
+            <p>Esta página no solicita contraseñas, números telefónicos, pagos ni datos personales. Los botones te llevan directamente a Telegram.</p>
+          </div>
+        </div>
+
+        <div class="channel-grid">
+          <article class="channel-card channel-card--featured reveal" data-channel="principal">
+            <span class="channel-tag">PRINCIPAL</span>
+            <div class="channel-icon">
+              <img src="assets/logo-videos-virales-hn.png" alt="" width="900" height="900" loading="lazy">
+            </div>
+            <h3>Videos Virales HN</h3>
+            <p>Nuestro canal principal y la comunidad con más seguidores. Recibe el contenido viral destacado y escríbenos directamente desde Telegram.</p>
+            <ul class="channel-features" aria-label="Incluye">
+              <li>Contenido viral destacado</li>
+              <li>Mensajes directos disponibles</li>
+              <li>Acceso gratuito</li>
+            </ul>
+            <a class="telegram-button" href="https://t.me/+xnHwpeX7VEQyZjEx" target="_blank" rel="noopener noreferrer" data-telegram-link>
+              <span class="telegram-button__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 3.2 18.5 19c-.2 1.1-.9 1.4-1.8.9l-4.8-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.2 13 1.5 11.5c-1-.3-1-1 .2-1.5L20 3c.8-.3 1.6.2 1.6.2Z"/></svg></span>
+              <span>UNIRME AL CANAL</span>
+              <svg class="telegram-button__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+          </article>
+
+          <article class="channel-card reveal" data-channel="oficial-dos">
+            <div class="channel-icon">
+              <img src="assets/logo-videos-virales-hn.png" alt="" width="900" height="900" loading="lazy">
+            </div>
+            <h3>Videos Virales HN</h3>
+            <p>Otro canal oficial para que sigas disfrutando publicaciones virales y puedas enviarnos mensajes directos desde Telegram.</p>
+            <ul class="channel-features" aria-label="Incluye">
+              <li>Publicaciones virales</li>
+              <li>Mensajes directos disponibles</li>
+              <li>Acceso gratuito</li>
+            </ul>
+            <a class="telegram-button" href="https://t.me/+-x9X6AdiWWNkYmEx" target="_blank" rel="noopener noreferrer" data-telegram-link>
+              <span class="telegram-button__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 3.2 18.5 19c-.2 1.1-.9 1.4-1.8.9l-4.8-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.2 13 1.5 11.5c-1-.3-1-1 .2-1.5L20 3c.8-.3 1.6.2 1.6.2Z"/></svg></span>
+              <span>UNIRME AL CANAL</span>
+              <svg class="telegram-button__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+          </article>
+
+          <article class="channel-card reveal" data-channel="oficial-tres">
+            <div class="channel-icon">
+              <img src="assets/logo-videos-virales-hn.png" alt="" width="900" height="900" loading="lazy">
+            </div>
+            <h3>Videos Virales HN</h3>
+            <p>Un tercer canal oficial con más contenido de nuestra comunidad y la opción de escribirnos directamente desde Telegram.</p>
+            <ul class="channel-features" aria-label="Incluye">
+              <li>Más contenido viral</li>
+              <li>Mensajes directos disponibles</li>
+              <li>Acceso gratuito</li>
+            </ul>
+            <a class="telegram-button" href="https://t.me/+M9EU1h1vtPg3YTUx" target="_blank" rel="noopener noreferrer" data-telegram-link>
+              <span class="telegram-button__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 3.2 18.5 19c-.2 1.1-.9 1.4-1.8.9l-4.8-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.2 13 1.5 11.5c-1-.3-1-1 .2-1.5L20 3c.8-.3 1.6.2 1.6.2Z"/></svg></span>
+              <span>UNIRME AL CANAL</span>
+              <svg class="telegram-button__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about section" aria-labelledby="about-title">
+      <div class="container about__layout">
+        <div class="about__image reveal">
+          <img src="assets/portada-videos-virales-hn.png" alt="Portada oficial de Videos Virales HN" width="1802" height="791" loading="lazy">
+        </div>
+        <div class="about__content reveal">
+          <p class="eyebrow">UNA SOLA COMUNIDAD</p>
+          <h2 id="about-title">De X a Telegram, sin rodeos.</h2>
+          <p>Creado para que encuentres rápidamente los canales oficiales de Videos Virales HN, sin páginas confusas ni enlaces escondidos.</p>
+          <div class="metrics" aria-label="Ventajas">
+            <div><strong>3</strong><span>Canales oficiales</span></div>
+            <div><strong>18+</strong><span>Acceso responsable</span></div>
+            <div><strong>DM</strong><span>Mensajes directos</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__layout">
+      <a class="brand-mini" href="#inicio" aria-label="Volver al inicio">
+        <img src="assets/favicon.svg" alt="" width="34" height="34">
+        <span>VIDEOS VIRALES <b>HN</b></span>
+      </a>
+      <p>© <span id="current-year"></span> Videos Virales HN. Todos los derechos reservados.</p>
+      <p class="footer__legal">Sitio para mayores de 18 años. No afiliado oficialmente con Telegram ni con X. Este sitio no aloja contenido multimedia.</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 10 17 19 7"/></svg>
+    Abriendo Telegram…
+  </div>
+</body>
+</html>
